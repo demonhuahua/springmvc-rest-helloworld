@@ -33,6 +33,7 @@ podTemplate(label: label, containers: [
         echo "构建 Docker 镜像阶段"
         sh "pwd"
         sh "ls -l"
+        sh "ls -l target"
         
       }
     }
