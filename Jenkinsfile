@@ -22,11 +22,18 @@ podTemplate(label: label, containers: [
     stage('代码编译打包') {
       container('maven') {
         echo "代码编译打包阶段"
+        sh "mvn clean compile"
+        sh "mvn clean package"
+        sh "pwd"
+        sh "ls -l"
       }
     }
     stage('构建 Docker 镜像') {
       container('docker') {
         echo "构建 Docker 镜像阶段"
+        sh "pwd"
+        sh "ls -l"
+        
       }
     }
     stage('运行 Kubectl') {
@@ -47,6 +54,8 @@ podTemplate(label: label, containers: [
         echo "查看 Helm Release 列表"
         sh "echo helm list"
         sh "helm list"
+        sh "pwd"
+        sh "ls -l"
       }
     }
   }
