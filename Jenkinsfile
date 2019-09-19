@@ -84,7 +84,7 @@ podTemplate(label: label, containers: [
       container('jnlp') {
        
         
-        input {
+  input("test") {
   message 'test'
   id 'test'
   ok 'ok'
