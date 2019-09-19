@@ -92,10 +92,13 @@ podTemplate(label: label, containers: [
                        [$class: 'BooleanParameterDefinition', defaultValue: false, description:
 '', name: 'Banana'],
                        [$class: 'StringParameterDefinition', defaultValue: 'dv', description:
-'', name: 'yhz']  
+'', name: 'yhz'],  
+                       [$class: 'ChoiceParameterDefinition', choices: ['c1', 'c2'], description:
+'', name: 'choice']
                    ])
                    version = res['Apple']
                    name = res['yhz']  
+                   print(res['choice'])
                    print(res['Apple'])
                    print(res['yhz'])
                }
