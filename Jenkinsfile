@@ -70,7 +70,7 @@ podTemplate(label: label, containers: [
         sh "df -h"
         sh "pwd"
         sh "ls -l"
-        sh "ls -al /root"
+        sh "uname -a"
       }
     }
     
