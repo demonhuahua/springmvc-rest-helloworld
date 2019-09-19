@@ -92,6 +92,7 @@ podTemplate(label: label, containers: [
                        [$class: 'BooleanParameterDefinition', defaultValue: false, description:
 '', name: 'Banana']
                    ])
+                   version = res['Apple']
                    print(res['Apple'])
                }
         
