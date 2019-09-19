@@ -94,10 +94,13 @@ podTemplate(label: label, containers: [
                        [$class: 'StringParameterDefinition', defaultValue: 'dv', description:
 '', name: 'yhz'],  
                        [$class: 'ChoiceParameterDefinition', choices: ["$GIT_TAG","$testvar",'c2'], description:
-'', name: 'choice']
+'', name: 'choice'],
+                       [$class: 'ChoiceParameterDefinition', choices: "$cs", description:
+'', name: 'cs']
                    ])
                    version = res['Apple']
                    name = res['yhz']  
+                   print(res['cs'])
                    print(res['choice'])
                    print(res['Apple'])
                    print(res['yhz'])
