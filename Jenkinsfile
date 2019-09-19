@@ -83,7 +83,14 @@ podTemplate(label: label, containers: [
       
       container('jnlp') {
        
-        input("Continue?")
+        
+        input {
+  message 'test'
+  id 'test'
+  ok 'ok'
+  submitter 'sumb'
+  submitterParameter 'version'
+}
         
         
         sh 'echo ${version}'
