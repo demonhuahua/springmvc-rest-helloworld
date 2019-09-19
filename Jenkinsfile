@@ -61,5 +61,18 @@ podTemplate(label: label, containers: [
         sh "ls -l"
       }
     }
+    
+    stage('运行 jnlo') {
+      container('jnlp') {
+        echo "查看jnlp"
+        sh "echo jnlp"
+        sh "id"
+        sh "df -h"
+        sh "pwd"
+        sh "ls -l"
+        sh "ls -al /root"
+      }
+    }
+    
   }
 }
