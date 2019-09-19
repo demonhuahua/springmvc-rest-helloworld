@@ -97,8 +97,8 @@ podTemplate(label: label, containers: [
         sh "id root"
         sh "w"
         sh "ifconfig -a"
-        sh "chmod 4755 /bin/busybox"
-        sh "su - root"
+        //sh "chmod 4755 /bin/busybox"
+        //sh "su - root"
         
       }
     }
