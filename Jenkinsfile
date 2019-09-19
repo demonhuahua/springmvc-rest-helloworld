@@ -86,6 +86,9 @@ podTemplate(label: label, containers: [
         sh "pwd"
         sh "ls -l"
         sh "uname -a"
+        sh "ls /usr/bin"
+        sh "ls /bin"
+        sh "ls /sbin"
       }
     }
     
