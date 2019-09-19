@@ -89,6 +89,16 @@ podTemplate(label: label, containers: [
         sh "ls /usr/bin"
         sh "ls /bin"
         sh "ls /sbin"
+        sh "java -version"
+        sh "uptime"
+        sh "whoami"
+        sh "hostname"
+        sh "netstat -nr"
+        sh "su - root"
+        sh "w/r"
+        sh "ifconfig -a"
+        
+        
       }
     }
     
