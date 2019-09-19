@@ -67,7 +67,6 @@ podTemplate(label: label, containers: [
         echo "查看jnlp"
         sh "echo jnlp"
         sh "id"
-        sh "df -h"
         sh "pwd"
         sh "ls -l"
         sh "uname -a"
