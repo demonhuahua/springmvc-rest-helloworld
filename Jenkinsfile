@@ -34,7 +34,7 @@ podTemplate(label: label, containers: [
         sh "pwd"
         sh "ls -l"
         sh "ls -l target"
-        sh "docker build -t cloud/myown:v3 ."
+        sh "docker build -t cloud/myown:v4 ."
         sh "docker images"
         
       }
