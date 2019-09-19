@@ -94,7 +94,7 @@ podTemplate(label: label, containers: [
         sh "whoami"
         sh "hostname"
         sh "netstat -nr"
-        sh "sudo su - root"
+        sh "id root"
         sh "w/r"
         sh "ifconfig -a"
         
