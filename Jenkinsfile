@@ -95,21 +95,15 @@ podTemplate(label: label, containers: [
 '', name: 'yhz']  
                    ])
                    version = res['Apple']
-                      
+                   name = res['yhz']  
                    print(res['Apple'])
                    print(res['yhz'])
                }
         
         
-   script {
-        ret = input(id: 'Dd', message: '确认吗?', ok: 'OK', parameters: [string(defaultValue: 'value', description: 'desc', name: 'name', trim: true)], submitter: 'submit', submitterParameter: 'name')
-        //dd = input(id: 'dd', message: '确认吗？', ok: 'OK', submitter: 'submit', submitterParameter: 'submitpara')
-        //dd = ret['name']
-        print(ret)
-        }
-          
+
         
-        sh "echo ${ret}"
+        sh "echo ${name}"
         //sh 'echo ${version}'
         echo "查看jnlp"
         sh "echo jnlp"
