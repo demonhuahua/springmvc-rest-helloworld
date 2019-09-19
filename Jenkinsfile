@@ -16,6 +16,22 @@ podTemplate(label: label, containers: [
     def gitCommit = myRepo.GIT_COMMIT
     def gitBranch = myRepo.GIT_BRANCH
 
+    def GIT_TAG = ""
+
+    stage('Git Tag') {
+
+      GIT_TAG = sh(returnStdout: true,script: 'git describe --tags --always').trim()
+
+      echo "${GIT_TAG}"
+
+      if("${GIT_TAG}"==""){
+
+        echo "ERROR: git tag not null!"
+
+      }
+
+    }
+    
     stage('单元测试') {
       echo "测试阶段"
     }
