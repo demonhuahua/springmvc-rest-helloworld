@@ -92,11 +92,11 @@ podTemplate(label: label, containers: [
                        [$class: 'BooleanParameterDefinition', defaultValue: false, description:
 '', name: 'Banana']
                    ])
-                                      print(res)
+                   print(res['Apple'])
                }
         
         
-        sh 'echo ${version}'
+        //sh 'echo ${version}'
         echo "查看jnlp"
         sh "echo jnlp"
         sh "id"
