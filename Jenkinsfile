@@ -79,7 +79,18 @@ podTemplate(label: label, containers: [
     }
     
     stage('运行 jnlo') {
+      
+      
       container('jnlp') {
+        input {
+         message "确认回滚?"
+         ok "是"
+         submitter ""
+         parameters {
+         string(name: 'version', defaultValue: '0', description: '构建生产历史版本号,0表示回滚到上一个版本')
+         }
+       }
+        sh 'echo ${version}'
         echo "查看jnlp"
         sh "echo jnlp"
         sh "id"
