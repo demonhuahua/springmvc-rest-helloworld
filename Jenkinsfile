@@ -84,13 +84,16 @@ podTemplate(label: label, containers: [
       container('jnlp') {
        
         
-  input("test") {
-  message 'test'
-  id 'test'
-  ok 'ok'
-  submitter 'sumb'
-  submitterParameter 'version'
-}
+  script {
+                   res = input(
+                       message: 'Was this successful?', parameters: [
+                       [$class: 'BooleanParameterDefinition', defaultValue: false, description:
+'', name: 'Apple'],
+                       [$class: 'BooleanParameterDefinition', defaultValue: false, description:
+'', name: 'Banana']
+                   ])
+                                      print(res)
+               }
         
         
         sh 'echo ${version}'
