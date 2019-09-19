@@ -96,7 +96,7 @@ podTemplate(label: label, containers: [
                    print(res['Apple'])
                }
         
-        input id: 'dd', message: 'test', ok: 'dd', submitter: 'dd', submitterParameter: 'dd'
+        dd = input(id: 'dd', message: 'test', ok: 'dd', submitter: 'dd', submitterParameter: 'dd')
         sh "echo ${dd}"
         //sh 'echo ${version}'
         echo "查看jnlp"
