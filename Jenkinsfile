@@ -83,7 +83,6 @@ podTemplate(label: label, containers: [
       
       container('jnlp') {
        
-        stage('Example') {
             input {
                 message "Should we continue?"
                 ok "Yes, we should."
@@ -95,7 +94,7 @@ podTemplate(label: label, containers: [
             steps {
                 echo "Hello, ${PERSON}, nice to meet you."
             }
-        }
+        
         
         sh 'echo ${version}'
         echo "查看jnlp"
