@@ -23,9 +23,10 @@ podTemplate(label: label, containers: [
 
     stage('Git Tag') {
 
-      GIT_TAG = sh(returnStdout: true,script: 'git describe --tags --always').trim()
-
+      //GIT_TAG = sh(returnStdout: true,script: 'git describe --tags --always').trim()
+      GIT_TAG = "$Tag"
       echo "${GIT_TAG}"
+      
 
       if("${GIT_TAG}"==""){
 
