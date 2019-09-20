@@ -158,15 +158,17 @@ podTemplate(label: label, containers: [
     //cs变量为Jenkins执行时传入
     if("${cs}"=="回滚"){
     echo  "回滚"
+    echo  "v1.0.5"
     sh "echo ${Tag}"
     }
     
     //cs变量为Jenkins执行时传入
     if("${cs}"=="中止"){
     echo  "中止"
+    echo  "v1.0.5"
     sh "echo ${Tag}"
     }
     
-    //v1.0.4
+    //v1.0.5
   }
 }
