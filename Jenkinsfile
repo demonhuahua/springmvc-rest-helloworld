@@ -32,9 +32,13 @@ podTemplate(label: label, containers: [
 
     }
     
+    if("${GIT_TAG}"!=""){
+    
     stage('单元测试') {
       echo "测试阶段"
     }
+      }
+      
     stage('代码编译打包') {
       container('maven') {
         echo "代码编译打包阶段"
