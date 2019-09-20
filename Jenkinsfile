@@ -12,8 +12,8 @@ podTemplate(label: label, containers: [
   hostPathVolume(mountPath: '/root/.kube', hostPath: '/root/.kube')
 ]) {
   node(label) {
-    
-    if("${testvar}"=="yhz"){
+    //追加if语句测试，如删除该句，则同步删除倒数第3个}符号
+    if("${cs}"=="部署"){
     
     def myRepo = checkout scm
     def gitCommit = myRepo.GIT_COMMIT
@@ -115,6 +115,7 @@ podTemplate(label: label, containers: [
                    ])
                    version = res['Apple']
                    name = res['yhz']  
+                   oper = res['cs']
                    print(res['cs'])
                    print(res['choice'])
                    print(res['Apple'])
@@ -151,10 +152,16 @@ podTemplate(label: label, containers: [
     }
     
 
-      
+     }
+    
+    
+    if("${cs}"=="回滚"){
+    echo  "回滚"
     }
     
-    
+     if("${cs}"=="中止"){
+    echo  "中止"
+    }
     
     
   }
