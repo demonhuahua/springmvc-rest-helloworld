@@ -12,6 +12,9 @@ podTemplate(label: label, containers: [
   hostPathVolume(mountPath: '/root/.kube', hostPath: '/root/.kube')
 ]) {
   node(label) {
+    
+    if("${testvar}"=="yhz"){
+    
     def myRepo = checkout scm
     def gitCommit = myRepo.GIT_COMMIT
     def gitBranch = myRepo.GIT_BRANCH
@@ -148,6 +151,10 @@ podTemplate(label: label, containers: [
     }
     
 
+      
+    }
+    
+    
     
     
   }
