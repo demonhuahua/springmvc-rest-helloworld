@@ -32,7 +32,7 @@ podTemplate(label: label, containers: [
 
     }
     
-     if("${GIT_TAG}"=""){
+     if("${GIT_TAG}"==""){
     
     stage('单元测试kong') {
       echo "测试阶段kong"
