@@ -21,11 +21,15 @@ pipeline {
         }
         
         stage('Phares3') {
+             steps {
                echo "Hello World yhz3"
+               }
         }
         
         stage('Phares3') {
+             steps {
                echo "Hello World yhz4"
+             }
         }
     }
 }
