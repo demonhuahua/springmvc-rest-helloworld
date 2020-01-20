@@ -17,7 +17,9 @@ pipeline {
         
         
         stage('Phares2') {
+               steps {
                echo "Hello World yhz"
+               }
         }
         
         stage('Phares3') {
