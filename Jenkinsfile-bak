@@ -14,5 +14,18 @@ pipeline {
                 echo "Hello, ${PERSON}, nice to meet you."
             }
         }
+        
+        
+        stage('Phares2') {
+               echo "Hello World yhz"
+        }
+        
+        stage('Phares3') {
+               echo "Hello World yhz3"
+        }
+        
+        stage('Phares3') {
+               echo "Hello World yhz4"
+        }
     }
 }
