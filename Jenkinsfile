@@ -77,6 +77,7 @@ spec:
         ln -s `pwd` /go/src/github.com/terraform-providers/terraform-provider-aws
         ls
         echo yhz4 > /tmp/yhz4.txt
+        env
         echo done
         """
       }
