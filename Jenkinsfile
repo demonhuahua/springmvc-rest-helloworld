@@ -64,6 +64,7 @@ spec:
         sh 'echo yhz3 > /tmp/yhz3.txt'
         //sh 'env'
         //sh 'echo ${testchoice}'
+        sh 'echo ${yhztag}'
       }
     }
 
