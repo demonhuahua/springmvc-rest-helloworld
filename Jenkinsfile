@@ -65,6 +65,7 @@ spec:
         //sh 'env'
         //sh 'echo ${testchoice}'
         sh 'echo ${yhztag}'
+        sh 'echo ${yhz_revision:0:8}'
       }
     }
 
