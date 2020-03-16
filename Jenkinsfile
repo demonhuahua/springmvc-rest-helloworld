@@ -46,20 +46,22 @@ spec:
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
     }
     
-    stage('Clone') {
-    echo "1.Clone Stage"
+    //stage('Clone') {
+    //echo "1.Clone Stage"
     //git url: "https://github.com/demonhuahua/springmvc-rest-helloworld.git"
-    sh "pwd"
-    sh "ls"
-    sh "cat README"
+    //sh "pwd"
+    //sh "ls"
+    //sh "cat README"
     //script {
     //    
     //    build_tag = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
     //}
     //echo "${build_tag}"
-}
+    // }
     
     stage('Build a Maven project') {
+      sh "pwd"
+      sh "ls"
       result = sh returnStdout: true ,script: "git rev-parse --short HEAD"
       result = result.trim()
       echo "${result}"
