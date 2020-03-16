@@ -45,10 +45,16 @@ spec:
     parameters {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
     }
-    stage('Build a Maven project') {
-       script {
+    
+    stage('Clone') {
+    echo "1.Clone Stage"
+    git url: "https://github.com/demonhuahua/springmvc-rest-helloworld.git"
+    script {
         build_tag = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
-       }
+    }
+}
+    
+    stage('Build a Maven project') {
       echo "{build_tag}"
       echo "begin"
       echo "${JENKINS_URL}"
