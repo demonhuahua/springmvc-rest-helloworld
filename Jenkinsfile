@@ -52,6 +52,7 @@ spec:
     script {
         build_tag = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
     }
+    echo "{build_tag}"
 }
     
     stage('Build a Maven project') {
