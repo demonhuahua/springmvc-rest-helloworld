@@ -51,6 +51,7 @@ spec:
     git url: "https://github.com/demonhuahua/springmvc-rest-helloworld.git"
     sh "pwd"
     sh "ls"
+    sh "cat README"
     script {
         
         build_tag = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
