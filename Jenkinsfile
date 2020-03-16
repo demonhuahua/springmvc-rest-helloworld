@@ -62,7 +62,6 @@ spec:
       echo "${result}"
       echo "${build_tag}"
       sh "buildtag=`git rev-parse --short HEAD`"
-      echo "${buildtag}"
       echo "begin"
       echo "${JENKINS_URL}"
       echo "${JENKINS_SECRET}"
@@ -102,7 +101,6 @@ spec:
         """
         echo "${result}"
         echo "${build_tag}"
-        echo "${buildtag}"
       }
     }
 
