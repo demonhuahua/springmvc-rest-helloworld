@@ -53,16 +53,16 @@ spec:
         
         build_tag = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
     }
-    echo "{build_tag}"
+    echo "${build_tag}"
 }
     
     stage('Build a Maven project') {
       result = sh returnStdout: true ,script: "git rev-parse --short HEAD"
       result = result.trim()
-      echo "{result}"
-      echo "{build_tag}"
+      echo "${result}"
+      echo "${build_tag}"
       sh "buildtag=`git rev-parse --short HEAD`"
-      echo "{buildtag}"
+      echo "${buildtag}"
       echo "begin"
       echo "${JENKINS_URL}"
       echo "${JENKINS_SECRET}"
@@ -100,6 +100,9 @@ spec:
         env
         echo done
         """
+        echo "${result}"
+        echo "${build_tag}"
+        echo "${buildtag}"
       }
     }
 
