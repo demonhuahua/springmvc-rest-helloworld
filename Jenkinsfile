@@ -50,8 +50,7 @@ spec:
     echo "1.Clone Stage"
     git url: "https://github.com/demonhuahua/springmvc-rest-helloworld.git"
     script {
-        sh "pwd"
-        sh(cd springmvc-rest-helloworld)
+        
         build_tag = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
     }
     echo "{build_tag}"
@@ -59,6 +58,8 @@ spec:
     
     stage('Build a Maven project') {
       echo "{build_tag}"
+      buildtag=sh "git rev-parse --short HEAD"
+      echo "{buildtag}"
       echo "begin"
       echo "${JENKINS_URL}"
       echo "${JENKINS_SECRET}"
