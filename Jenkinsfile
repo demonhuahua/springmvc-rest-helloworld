@@ -50,6 +50,7 @@ spec:
     echo "1.Clone Stage"
     git url: "https://github.com/demonhuahua/springmvc-rest-helloworld.git"
     script {
+        cd springmvc-rest-helloworld
         build_tag = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
     }
     echo "{build_tag}"
