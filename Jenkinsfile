@@ -46,6 +46,10 @@ spec:
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
     }
     stage('Build a Maven project') {
+       script {
+        build_tag = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
+       }
+      echo "{build_tag}"
       echo "begin"
       echo "${JENKINS_URL}"
       echo "${JENKINS_SECRET}"
@@ -66,6 +70,7 @@ spec:
         //sh 'echo ${testchoice}'
         sh 'echo ${yhztag}'
         sh 'echo ${yhz_revision:0:8}'
+        sh 'echo ${ExtendChoice}'
       }
     }
 
