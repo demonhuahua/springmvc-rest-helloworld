@@ -58,7 +58,7 @@ spec:
     
     stage('Build a Maven project') {
       echo "{build_tag}"
-      buildtag=sh "git rev-parse --short HEAD"
+      sh "buildtag=`git rev-parse --short HEAD`"
       echo "{buildtag}"
       echo "begin"
       echo "${JENKINS_URL}"
