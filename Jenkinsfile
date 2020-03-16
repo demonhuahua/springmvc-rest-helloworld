@@ -48,15 +48,15 @@ spec:
     
     stage('Clone') {
     echo "1.Clone Stage"
-    git url: "https://github.com/demonhuahua/springmvc-rest-helloworld.git"
+    //git url: "https://github.com/demonhuahua/springmvc-rest-helloworld.git"
     sh "pwd"
     sh "ls"
     sh "cat README"
-    script {
-        
-        build_tag = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
-    }
-    echo "${build_tag}"
+    //script {
+    //    
+    //    build_tag = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
+    //}
+    //echo "${build_tag}"
 }
     
     stage('Build a Maven project') {
