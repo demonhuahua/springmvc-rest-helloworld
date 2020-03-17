@@ -53,15 +53,15 @@ spec:
     
     stage('Clone') {
     echo "1.Clone Stage"
-    def myRepo = checkout scm
-    def gitCommit = myRepo.GIT_COMMIT
-    def gitBranch = myRepo.GIT_BRANCH
-    echo "{gitCommit}"
-    echo "${gitBranch}"
+    //def myRepo = checkout scm
+    //def gitCommit = myRepo.GIT_COMMIT
+    //def gitBranch = myRepo.GIT_BRANCH
+    //echo "{gitCommit}"
+    //echo "${gitBranch}"
     //git url: "https://github.com/demonhuahua/springmvc-rest-helloworld.git"
     sh "pwd"
     sh "ls"
-    sh "cat README"
+    //sh "cat README"
     script {
         
         build_tag = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
@@ -88,9 +88,9 @@ spec:
       container('maven') {
         echo "maven start"
         ret = sh returnStdout: true ,script: "curl http://10.97.164.35:5000/v2/busybox/tags/list | grep v1.0"
-        echo "{ret}"
+        echo "${ret}"
         ret = ret.trim()
-        echo "{ret}"
+        echo "${ret}"
         //sh 'mvn -B clean package'
         sh 'echo maven'
         sh 'pwd'
