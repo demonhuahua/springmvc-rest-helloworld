@@ -48,7 +48,12 @@ spec:
     
     stage('Clone') {
     echo "1.Clone Stage"
-    git url: "https://github.com/demonhuahua/springmvc-rest-helloworld.git"
+    def myRepo = checkout scm
+    def gitCommit = myRepo.GIT_COMMIT
+    def gitBranch = myRepo.GIT_BRANCH
+    echo "{gitCommit}"
+    echo "${gitBranch}"
+    //git url: "https://github.com/demonhuahua/springmvc-rest-helloworld.git"
     sh "pwd"
     sh "ls"
     sh "cat README"
