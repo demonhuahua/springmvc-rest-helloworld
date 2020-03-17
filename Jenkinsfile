@@ -13,6 +13,9 @@ spec:
     - name: curl
       hostPath:
         path: /usr/local/bin/curl
+    volumeMounts:
+    - mountPath: "/usr/local/bin/curl"
+      name: curl
   containers:
   - name: maven
     image: maven:3.3.9-jdk-8-alpine
