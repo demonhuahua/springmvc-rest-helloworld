@@ -10,6 +10,9 @@ spec:
     - name: nfs
       persistentVolumeClaim:
         claimName: maven-repo
+    - name: curl
+      hostPath:
+        path: /usr/local/bin/curl
   containers:
   - name: maven
     image: maven:3.3.9-jdk-8-alpine
