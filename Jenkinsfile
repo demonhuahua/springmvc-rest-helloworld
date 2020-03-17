@@ -13,9 +13,6 @@ spec:
     - name: curl
       hostPath:
         path: /usr/local/bin/curl
-    volumeMounts:
-    - mountPath: "/usr/local/bin/curl"
-      name: curl
   containers:
   - name: maven
     image: maven:3.3.9-jdk-8-alpine
@@ -24,6 +21,8 @@ spec:
     volumeMounts:
     - mountPath: "/tmp"
       name: nfs
+    - mountPath: "/usr/local/bin/curl"
+      name: curl
     env:
     - name: POD_OWN_IP_ADDRESS
       valueFrom:
@@ -71,10 +70,7 @@ spec:
     }
     
     stage('Build a Maven project') {
-      ret = sh returnStdout: true ,script: "curl http://10.97.164.35:5000/v2/busybox/tags/list | grep v1.0"
-      echo "{ret}"
-      ret = ret.trim()
-      echo "{ret}"
+ 
       sh "pwd"
       sh "ls"
       result = sh returnStdout: true ,script: "git rev-parse --short HEAD"
@@ -90,6 +86,11 @@ spec:
       echo "${JOB_NAME}"
       //git 'https://github.com/jenkinsci/kubernetes-plugin.git'
       container('maven') {
+        echo "maven start"
+        ret = sh returnStdout: true ,script: "curl http://10.97.164.35:5000/v2/busybox/tags/list | grep v1.0"
+        echo "{ret}"
+        ret = ret.trim()
+        echo "{ret}"
         //sh 'mvn -B clean package'
         sh 'echo maven'
         sh 'pwd'
