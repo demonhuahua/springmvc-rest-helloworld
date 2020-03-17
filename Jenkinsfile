@@ -65,6 +65,10 @@ spec:
     }
     
     stage('Build a Maven project') {
+      ret = sh returnStdout: true ,script: "curl http://10.97.164.35:5000/v2/busybox/tags/list | grep v1.0"
+      echo "{ret}"
+      ret = ret.trim()
+      echo "{ret}"
       sh "pwd"
       sh "ls"
       result = sh returnStdout: true ,script: "git rev-parse --short HEAD"
