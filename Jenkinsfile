@@ -91,6 +91,9 @@ spec:
         echo "${ret}"
         ret = ret.trim()
         echo "${ret}"
+        if ("$ret"){
+        echo "Has Data!"
+         }
         //sh 'mvn -B clean package'
         sh 'echo maven'
         sh 'pwd'
