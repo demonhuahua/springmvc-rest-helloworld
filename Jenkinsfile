@@ -87,7 +87,7 @@ spec:
       //git 'https://github.com/jenkinsci/kubernetes-plugin.git'
       container('maven') {
         echo "maven start"
-        //ret = sh returnStdout: true ,script: "curl http://10.97.164.35:5000/v2/busybox/tags/list | grep v9.0"
+        //ret = sh returnStdout: true ,script: "curl http://10.97.164.35:5000/v2/busybox/tags/list | grep v1.0"
         ret = sh(script: "curl http://10.97.164.35:5000/v2/busybox/tags/list | grep v9.0", returnStatus: true)
         echo "${ret}"
         //ret = ret.trim()
