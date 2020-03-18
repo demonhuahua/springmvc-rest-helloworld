@@ -92,7 +92,7 @@ spec:
         echo "${ret}"
         //ret = ret.trim()
         //echo "${ret}"
-        if ("$ret"==0){
+        if ("${ret}"=="0"){
         echo "Has Data!"
          }
         //sh 'mvn -B clean package'
