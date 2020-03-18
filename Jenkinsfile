@@ -89,8 +89,8 @@ spec:
         echo "maven start"
         ret = sh returnStdout: true ,script: "curl http://10.97.164.35:5000/v2/busybox/tags/list | grep v9.0"
         echo "${ret}"
-        ret = ret.trim()
-        echo "${ret}"
+        //ret = ret.trim()
+        //echo "${ret}"
         if ("$ret"){
         echo "Has Data!"
          }
